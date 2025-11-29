@@ -36,7 +36,7 @@ export default function RegisterScreen() {
 		setLoading(true);
 		try {
 			await authService.register(email, password);
-			router.replace("/"); // langsung masuk app
+			router.replace("/"); // go straight into the app
 		} catch (err: any) {
 			if (err.code === "auth/email-already-in-use") {
 				setError("This email address is already in use.");
@@ -52,7 +52,7 @@ export default function RegisterScreen() {
 	return (
 		<View style={{ padding: 24, flex: 1, justifyContent: "center" }}>
 			<Text style={{ fontSize: 28, fontWeight: "bold", marginBottom: 24 }}>
-				Daftar Akun
+				Create Account
 			</Text>
 
 			<TextInput
@@ -105,14 +105,13 @@ export default function RegisterScreen() {
 				<Text
 					style={{ color: "#fff", textAlign: "center", fontWeight: "600" }}
 				>
-					{loading ? "Registering..." : "Daftar"}
+					{loading ? "Registering..." : "Register"}
 				</Text>
 			</TouchableOpacity>
 
 			<Link href="/login" style={{ marginTop: 24, textAlign: "center" }}>
-				Sudah punya akun? Login
+				Already have an account? Login
 			</Link>
 		</View>
 	);
 }
-

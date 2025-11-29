@@ -36,7 +36,7 @@ export default function LoginScreen() {
 		setLoading(true);
 		try {
 			await authService.login(email, password);
-			router.replace("/"); // Masuk ke Tabs Home
+			router.replace("/"); // Go to Home Tabs
 		} catch (err: any) {
 			setError("Failed to login. Please check your credentials.");
 			console.log("Login error:", err.message);
@@ -105,8 +105,15 @@ export default function LoginScreen() {
 				</Text>
 			</TouchableOpacity>
 
+			<Link
+				href="/forgot"
+				style={{ textAlign: "center", marginTop: 12, color: "#007bff" }}
+			>
+				Forgot Password?
+			</Link>
+
 			<Link href="/register" style={{ marginTop: 24, textAlign: "center" }}>
-				Belum punya akun? Daftar
+				Don&apos;t have an account? Register
 			</Link>
 		</View>
 	);

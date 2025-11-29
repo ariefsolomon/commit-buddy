@@ -1,8 +1,8 @@
-import { Text, View } from 'react-native';
+import { Text, View } from "react-native";
 
-export default function Partner() {
+export default function PartnerScreen() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
             <Text>Partner</Text>
         </View>
     );

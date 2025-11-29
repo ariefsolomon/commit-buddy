@@ -19,7 +19,7 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
         if (user && inAuthGroup) {
             router.replace("/");
         }
-    }, [user, loading]);
+    }, [user, loading, router, segments]);
 
     return <>{children}</>;
 }
